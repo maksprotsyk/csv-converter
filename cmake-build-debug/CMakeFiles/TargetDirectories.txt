@@ -1,3 +1,0 @@
-/Users/mprotsyk/UCU/tests/test-task/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/mprotsyk/UCU/tests/test-task/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/mprotsyk/UCU/tests/test-task/cmake-build-debug/CMakeFiles/hourscounter.dir
