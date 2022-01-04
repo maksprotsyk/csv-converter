@@ -57,30 +57,45 @@ include CMakeFiles/hourscounter.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/hourscounter.dir/flags.make
 
-CMakeFiles/hourscounter.dir/main.cpp.o: CMakeFiles/hourscounter.dir/flags.make
-CMakeFiles/hourscounter.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mprotsyk/UCU/tests/test-task/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/hourscounter.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hourscounter.dir/main.cpp.o -c /Users/mprotsyk/UCU/tests/test-task/main.cpp
+CMakeFiles/hourscounter.dir/src/main.cpp.o: CMakeFiles/hourscounter.dir/flags.make
+CMakeFiles/hourscounter.dir/src/main.cpp.o: ../src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mprotsyk/UCU/tests/test-task/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/hourscounter.dir/src/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hourscounter.dir/src/main.cpp.o -c /Users/mprotsyk/UCU/tests/test-task/src/main.cpp
 
-CMakeFiles/hourscounter.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hourscounter.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mprotsyk/UCU/tests/test-task/main.cpp > CMakeFiles/hourscounter.dir/main.cpp.i
+CMakeFiles/hourscounter.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hourscounter.dir/src/main.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mprotsyk/UCU/tests/test-task/src/main.cpp > CMakeFiles/hourscounter.dir/src/main.cpp.i
 
-CMakeFiles/hourscounter.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hourscounter.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mprotsyk/UCU/tests/test-task/main.cpp -o CMakeFiles/hourscounter.dir/main.cpp.s
+CMakeFiles/hourscounter.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hourscounter.dir/src/main.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mprotsyk/UCU/tests/test-task/src/main.cpp -o CMakeFiles/hourscounter.dir/src/main.cpp.s
+
+CMakeFiles/hourscounter.dir/src/parsing.cpp.o: CMakeFiles/hourscounter.dir/flags.make
+CMakeFiles/hourscounter.dir/src/parsing.cpp.o: ../src/parsing.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mprotsyk/UCU/tests/test-task/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/hourscounter.dir/src/parsing.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hourscounter.dir/src/parsing.cpp.o -c /Users/mprotsyk/UCU/tests/test-task/src/parsing.cpp
+
+CMakeFiles/hourscounter.dir/src/parsing.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hourscounter.dir/src/parsing.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mprotsyk/UCU/tests/test-task/src/parsing.cpp > CMakeFiles/hourscounter.dir/src/parsing.cpp.i
+
+CMakeFiles/hourscounter.dir/src/parsing.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hourscounter.dir/src/parsing.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mprotsyk/UCU/tests/test-task/src/parsing.cpp -o CMakeFiles/hourscounter.dir/src/parsing.cpp.s
 
 # Object files for target hourscounter
 hourscounter_OBJECTS = \
-"CMakeFiles/hourscounter.dir/main.cpp.o"
+"CMakeFiles/hourscounter.dir/src/main.cpp.o" \
+"CMakeFiles/hourscounter.dir/src/parsing.cpp.o"
 
 # External object files for target hourscounter
 hourscounter_EXTERNAL_OBJECTS =
 
-hourscounter: CMakeFiles/hourscounter.dir/main.cpp.o
+hourscounter: CMakeFiles/hourscounter.dir/src/main.cpp.o
+hourscounter: CMakeFiles/hourscounter.dir/src/parsing.cpp.o
 hourscounter: CMakeFiles/hourscounter.dir/build.make
 hourscounter: CMakeFiles/hourscounter.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mprotsyk/UCU/tests/test-task/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable hourscounter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mprotsyk/UCU/tests/test-task/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable hourscounter"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hourscounter.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

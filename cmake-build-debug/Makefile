@@ -123,32 +123,59 @@ hourscounter/fast:
 	$(MAKE) -f CMakeFiles/hourscounter.dir/build.make CMakeFiles/hourscounter.dir/build
 .PHONY : hourscounter/fast
 
-main.o: main.cpp.o
+src/main.o: src/main.cpp.o
 
-.PHONY : main.o
+.PHONY : src/main.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/hourscounter.dir/build.make CMakeFiles/hourscounter.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/hourscounter.dir/build.make CMakeFiles/hourscounter.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-main.i: main.cpp.i
+src/main.i: src/main.cpp.i
 
-.PHONY : main.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/hourscounter.dir/build.make CMakeFiles/hourscounter.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/hourscounter.dir/build.make CMakeFiles/hourscounter.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-main.s: main.cpp.s
+src/main.s: src/main.cpp.s
 
-.PHONY : main.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/hourscounter.dir/build.make CMakeFiles/hourscounter.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/hourscounter.dir/build.make CMakeFiles/hourscounter.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/parsing.o: src/parsing.cpp.o
+
+.PHONY : src/parsing.o
+
+# target to build an object file
+src/parsing.cpp.o:
+	$(MAKE) -f CMakeFiles/hourscounter.dir/build.make CMakeFiles/hourscounter.dir/src/parsing.cpp.o
+.PHONY : src/parsing.cpp.o
+
+src/parsing.i: src/parsing.cpp.i
+
+.PHONY : src/parsing.i
+
+# target to preprocess a source file
+src/parsing.cpp.i:
+	$(MAKE) -f CMakeFiles/hourscounter.dir/build.make CMakeFiles/hourscounter.dir/src/parsing.cpp.i
+.PHONY : src/parsing.cpp.i
+
+src/parsing.s: src/parsing.cpp.s
+
+.PHONY : src/parsing.s
+
+# target to generate assembly for a file
+src/parsing.cpp.s:
+	$(MAKE) -f CMakeFiles/hourscounter.dir/build.make CMakeFiles/hourscounter.dir/src/parsing.cpp.s
+.PHONY : src/parsing.cpp.s
 
 # Help Target
 help:
@@ -159,9 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... hourscounter"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/parsing.o"
+	@echo "... src/parsing.i"
+	@echo "... src/parsing.s"
 .PHONY : help
 
 

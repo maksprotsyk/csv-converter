@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/hourscounter.dir/main.cpp.o"
+  "CMakeFiles/hourscounter.dir/src/main.cpp.o"
+  "CMakeFiles/hourscounter.dir/src/parsing.cpp.o"
   "hourscounter"
   "hourscounter.pdb"
 )

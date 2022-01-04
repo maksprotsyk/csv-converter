@@ -6,5 +6,5 @@ CXX_FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/Ma
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/mprotsyk/UCU/tests/test-task/include -I/usr/local/include 
+CXX_INCLUDES = -I/Users/mprotsyk/UCU/tests/test-task/inc -I/usr/local/include 
 

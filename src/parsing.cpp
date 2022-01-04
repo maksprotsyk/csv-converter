@@ -1,33 +1,14 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include <future>
-#include <unordered_map>
-
-#include <boost/algorithm/string/split.hpp>
-#include <boost/algorithm/string/classification.hpp>
-#include <boost/date_time/gregorian/gregorian.hpp>
-
-namespace datetime = boost::gregorian;
-
-constexpr size_t COLUMNS_NUM = 8;
-
-typedef std::unordered_map<std::string, std::unordered_map<std::string, size_t>> working_hours_map_t;
-
-
-struct WorkingTimeData {
-    std::string error = "";
-    std::string name = "";
-    size_t hours = 0;
-    std::string month = "";
-};
+//
+// Created by Maksym Protsyk on 1/4/22.
+//
+#include "parsing.h"
 
 
 WorkingTimeData parsing_function(std::string row, const std::string& separators) {
     WorkingTimeData data;
     std::vector<std::string> columns;
 
+    // splitting the row using the given separator
     boost::algorithm::split(
         columns,
         row,
@@ -35,7 +16,9 @@ WorkingTimeData parsing_function(std::string row, const std::string& separators)
         boost::token_compress_on
     );
 
+    // if row is invalid
     if (columns.size() != COLUMNS_NUM) {
+        // setting the error message
         data.error =
             "The row contains "
             + std::to_string(columns.size())
@@ -46,6 +29,7 @@ WorkingTimeData parsing_function(std::string row, const std::string& separators)
 
     data.name = columns[0];
 
+    // creating "month and year" string and returning error messages in case of caught exceptions
     try {
         datetime::date date(datetime::from_simple_string(columns[6]));
         datetime::date::ymd_type ymd = date.year_month_day();
@@ -62,7 +46,7 @@ WorkingTimeData parsing_function(std::string row, const std::string& separators)
         return data;
     }
 
-
+    // getting hours number and returning error messages in case of caught exceptions
     try {
         size_t hours = std::stoul(columns[7]);
         data.hours = hours;
@@ -93,6 +77,7 @@ int convert_csv(const std::string& input_name, const std::string& output_name, c
     std::getline(infile, line);
     std::vector<std::future<WorkingTimeData>> tasks;
     while (std::getline(infile, line)) {
+        // scheduling async parsing task
         tasks.push_back(std::async(
             std::launch::async,
             parsing_function,
@@ -102,14 +87,19 @@ int convert_csv(const std::string& input_name, const std::string& output_name, c
     }
 
     working_hours_map_t global_map;
+    // getting result of every task and adding it to map with working hours of every worker
     for (auto& task: tasks) {
         auto res = task.get();
+        // exiting in case of error
         if (!res.error.empty()) {
             std::cout << "Error: " << res.error << std::endl;
             return -2;
         }
+        // inserting the worker
         global_map.insert(std::make_pair(res.name, std::unordered_map<std::string, size_t>()));
+        // inserting the month
         global_map[res.name].insert(std::make_pair(res.month, 0));
+        // adding hours num
         global_map[res.name][res.month] += res.hours;
 
     }
@@ -121,6 +111,7 @@ int convert_csv(const std::string& input_name, const std::string& output_name, c
         return -3;
     }
 
+    // new csv file
     outfile << "Name" << separator << "Month" << separator << "Total hours" << std::endl;
 
     for (const auto& worker_entry: global_map) {
@@ -132,31 +123,3 @@ int convert_csv(const std::string& input_name, const std::string& output_name, c
 
     return 0;
 }
-
-
-int main()
-{
-    std::string input_name;
-    std::string output_name;
-    std::string separator;
-
-    std::cout << "Enter the input filename: ";
-    std::cin >> input_name;
-    std::cout << "Enter the output filename: ";
-    std::cin >> output_name;
-    while (true) {
-        std::cout << "Enter the separator (for example: ';'): ";
-        std::cin >> separator;
-        if (separator.size() == 1) {
-            break;
-        }
-        std::cout << "Error: separator size should be exactly 1" << std::endl;
-    }
-
-
-    return convert_csv(input_name, output_name, separator);
-
-
-
-}
- 

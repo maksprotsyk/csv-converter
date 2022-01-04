@@ -3,12 +3,12 @@ project(hourscounter)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(hourscounter main.cpp)
+add_executable(hourscounter src/main.cpp inc/parsing.h src/parsing.cpp)
 
 find_package(Boost REQUIRED)
 
 
-include_directories(include)
+include_directories(inc)
 include_directories(${Boost_INCLUDE_DIR})
 
 target_link_libraries(hourscounter ${Boost_LIBRARIES})
